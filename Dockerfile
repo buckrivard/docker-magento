@@ -14,8 +14,7 @@ RUN cd /tmp && \
 RUN chown -R www-data:www-data $INSTALL_DIR
 
 RUN apt-get update && \
-    apt-get install -y mysql-client-5.7 libxml2-dev libmcrypt4 libmcrypt-dev libpng-dev libjpeg-dev libfreetype6 libfreetype6-dev
-RUN docker-php-ext-install soap
+    apt-get install -y mysql-client-5.7 libxml2-dev libmcrypt4 libmcrypt-dev libpng-dev libjpeg-dev libfreetype6 libfreetype6-dev git
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install mcrypt
 RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/lib/ --with-freetype-dir=/usr/lib/ && \
